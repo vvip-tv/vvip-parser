@@ -31,7 +31,7 @@ vvip-parser 是一个基于 Node.js 的视频解析爬虫框架，成功从 Quic
 ```
 tests/
 ├── drpy2.js          # drpy2 核心框架
-├── cg.js             # 菜狗站点规则示例
+├── 360.js            # 360影视站点规则示例
 ├── cheerio.min.js    # HTML 解析库
 ├── crypto-js.js      # 加密库
 ├── jsencrypt.js      # RSA 加密
@@ -50,14 +50,14 @@ tests/
 ```bash
 # 注意：所有命令需要 --experimental-vm-modules 参数
 
-# 运行 drpy2 + 菜狗规则获取首页
-node --experimental-vm-modules cli.js run tests/drpy2.js -e tests/cg.js -m home
+# 运行 drpy2 + 360影视规则获取首页
+node --experimental-vm-modules cli.js run tests/drpy2.js -e tests/360.js -m home
 
 # 获取电视剧分类
-node --experimental-vm-modules cli.js run tests/drpy2.js -e tests/cg.js -m category -a '["teleplay", "1"]'
+node --experimental-vm-modules cli.js run tests/drpy2.js -e tests/360.js -m category -a '["2", "1"]'
 
 # 搜索功能
-node --experimental-vm-modules cli.js run tests/drpy2.js -e tests/cg.js -m search -a '["测试"]'
+node --experimental-vm-modules cli.js run tests/drpy2.js -e tests/360.js -m search -a '["复仇者联盟"]'
 ```
 
 ### 编程接口
@@ -144,12 +144,12 @@ var rule = {
 
 ### 测试验证
 - drpy2.js 版本：3.9.49beta40 
-- 菜狗规则成功加载和初始化
+- 360影视规则成功加载和初始化
 - **完整功能测试通过**：
   - ✅ init: 成功初始化并加载规则
-  - ✅ home: 返回 5 个分类和完整过滤器配置
-  - ✅ homeVod: 返回空列表（菜狗规则未定义推荐内容）
-  - ✅ category: 成功获取电视剧列表，返回15个视频条目
+  - ✅ home: 返回 4 个分类和完整过滤器配置
+  - ✅ homeVod: 返回推荐内容列表
+  - ✅ category: 成功获取分类列表，返回视频条目
   - ✅ search: 成功搜索功能，返回相关结果
 
 ## 开发注意事项
@@ -195,7 +195,7 @@ npm run lint
 npm run typecheck
 
 # 提交更改时确保测试通过
-node --experimental-vm-modules cli.js run tests/drpy2.js -e tests/cg.js -m home
+node --experimental-vm-modules cli.js run tests/drpy2.js -e tests/360.js -m home
 ```
 
 ## 关键技术突破

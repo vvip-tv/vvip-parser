@@ -178,6 +178,7 @@ program
     .option('-m, --method <method>', '要执行的方法', 'home')
     .option('-a, --args <args>', '方法参数 (JSON格式)')
     .option('-e, --extend <extend>', '初始化扩展配置或规则文件路径')
+    .option('-q, --quiet', '静默模式，只输出JSON结果')
     .action(async (script, options) => {
         try {
             let extend = options.extend || '';
@@ -187,8 +188,18 @@ program
                 try {
                     extend = await fs.readFile(extend, 'utf8');
                 } catch (err) {
-                    console.warn(`无法读取扩展配置文件: ${err.message}`);
+                    if (!options.quiet) {
+                        console.warn(`无法读取扩展配置文件: ${err.message}`);
+                    }
                 }
+            }
+            
+            // 劫持console方法以控制输出
+            const originalConsole = { ...console };
+            if (options.quiet) {
+                console.log = () => {};
+                console.warn = () => {};
+                console.info = () => {};
             }
             
             // 加载爬虫 (统一使用ES6模块加载)
@@ -232,13 +243,22 @@ program
                     throw new Error(`未知方法: ${options.method}`);
             }
             
-            // 输出结果
-            console.log(result);
+            // 恢复console并输出结果
+            if (options.quiet) {
+                Object.assign(console, originalConsole);
+                console.log(JSON.stringify(result));
+            } else {
+                console.log(result);
+            }
             
             // 销毁爬虫
             await spider.destroy();
             process.exit(0);
         } catch (error) {
+            // 恢复console以显示错误
+            if (options.quiet && typeof originalConsole !== 'undefined') {
+                Object.assign(console, originalConsole);
+            }
             console.error('执行失败:', error.message);
             console.error(error.stack);
             process.exit(1);

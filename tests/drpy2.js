@@ -5,44 +5,6 @@ import 模板 from "./模板.js";
 import {gbkTool} from './gbk.js'
 
 function init_test(){
-    // console.log(typeof(CryptoJS));
-    console.log("init_test_start");
-    // print(模板);
-    // print(typeof(模板.getMubans));
-    console.log("当前版本号:"+VERSION);
-    console.log(RKEY);
-    console.log(JSON.stringify(rule));
-    console.log("init_test_end");
-
-
-    // log('typeof (JSEncrypt):'+typeof (JSEncrypt));
-    // let publicKey = 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwEc7wBMtYKkxvrQNI3+ITBZwAkPkGvsv4TsAHFskKGZWz9eYl3scivhmlEfWHlEkdyb0m82CmB1qAgef+pD4cZu+Cdmm2e9lnExhLwm8cBgpkAen9QRNdjojZgxM0W+JcReH4W6pw+uFXiLRn4AIQkDftWGNLg6wlNS+39Z/RvP9zyATJLZ9AKDdHp62XMxEK1KZvWBuIg+Oa5UzgA9jy+2XyIqwhBtO8tPbUl21t2pvTzHoLUjSkPNm2LurcUk6+jQ2r6aiS2CN1NXIucPJU6mkuIQ821SjvkYPtIdRMntW4y2u4cyiqVEEQwlzWVMHh+/vfrWAQr9fgjDuYYtvPQIDAQAB';
-    // let privateKey  = 'MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDARzvAEy1gqTG+tA0jf4hMFnACQ+Qa+y/hOwAcWyQoZlbP15iXexyK+GaUR9YeUSR3JvSbzYKYHWoCB5/6kPhxm74J2abZ72WcTGEvCbxwGCmQB6f1BE12OiNmDEzRb4lxF4fhbqnD64VeItGfgAhCQN+1YY0uDrCU1L7f1n9G8/3PIBMktn0AoN0enrZczEQrUpm9YG4iD45rlTOAD2PL7ZfIirCEG07y09tSXbW3am9PMegtSNKQ82bYu6txSTr6NDavpqJLYI3U1ci5w8lTqaS4hDzbVKO+Rg+0h1Eye1bjLa7hzKKpUQRDCXNZUweH7+9+tYBCv1+CMO5hi289AgMBAAECggEBAIRbRJUWXmEwdq64kGbELlV6CIZ2p3mvOSlIjO34Cy7IK7AMz9xOgbpj/XDK9miOIJTouu7ZC7GcZdGZ4BUCYBMMS0fKjGFuurpZlXhkslNTPqEHtCUkXhIpOR7RDrwIlErGEOIsZC4aXQcM3tF1t7mroJLh4OY4dHMu82lv5NM4hhFMNvHzXVvrPXeTzw26gddHVG/ke0WUYOcB5j3cPp8xaVp7JV8bdxtGtkqIfBLY/dIczzJu/3F3cBpU2nNwt8uVUF/w/HKlr7j8FqqFHXWh182beU0n5AIdRyRJBrRUAEhdtsUnvJOVBDqzZa+9DJ5395F7V8KRlQptxETdhCECgYEA4x/2HM9fnVIhG6wTbEt1LhGTKYb/igMAHLqquEMfRsB44tobI8gVNwR3qJQY/nKXxcQemQV29PcdqpENCKyXUXGD8SI1UPg15rHFBI8CIqlCXfzJybdHjmzlhaA9I5lofIVh+5MW7WkvHZoRy7NeDMhHUuaiveuqC4OJ8n+dD2kCgYEA2LkmUVef3WkBBwUBRdkyoog3DMwR+/ubb0ncJVYy3ItYVJltQ4HqmrRiJc8xBAoFnG8rbiqDnmTnDR3WbuxU1G2hml09fqId+rQds2UfESswCXHU43A4f77m1XyA6PprBxpozVIcmK69N4rR9jOXflLWo3O+p2ipUbmNpId7+rUCgYBSpcbBJRT+AmzZzPwkZDD32p1ady114zGfQq3s7z/qVw+mPQezNZPCuXVxerK9pKVl6b/Ynwxyh5nb/3xms6c8k7oXfQM5u5ihof63cfKs+jqUSPCE3pTDVw0OWwjkc2Z6KW9GRHgLXEMw2mevYE3RCPArUpHV2nO+TNddzuIwQQKBgQDOZwdnUNygMfEYjlu3+jOPN8u2FGTMZ8SRKPbRWFb4VH27lKPLN2AIFuOivsEf56uQYRAry7GumMq0Y0ZmPg5Mglz2dvaqNBv5OLFQuW3tHAST+iWWtroYb+fISts7B8QG79AAO8OgZksvKrbslBYj6SEiaomZRsR7YQzVNXOOQQKBgQCovElZ50c8ZJ6m9D9fw3Nes7u9vshpyyac5tt4tZ7yfU4l5pWGrIUqCE703qZp4NAqEvlZUCJbj9kkysaj/2MfFb2b9jSvdNB+V/YW9Cwg+5TziYoOcQzN1z2u4p4goTAv0S+pTNSr3qWaTUI4TXUXQajif45Fexv+MrP5AAXQyw=='
-    // // let text = '你好';
-    // let text = '[{"vod_name":"兔小贝原创儿歌","vod_pic":"https://resource-cdn.tuxiaobei.com/video-album/FnQ8ieJHgsbgCKWXNBg4uoOmKgG5.jpg","vod_remarks":"共229首","vod_content":"","vod_id":"/subject/17@@兔小贝原创儿歌@@https://resource-cdn.tuxiaobei.com/video-album/FnQ8ieJHgsbgCKWXNBg4uoOmKgG5.jpg"},{"vod_name":"英文儿歌","vod_pic":"https://resource-cdn.tuxiaobei.com/video-album/Fqjpx2H_-QaYNAYn2MekRuDpeyUv.jpg","vod_remarks":"共10首","vod_content":"","vod_id":"/subject/23@@英文儿歌@@https://resource-cdn.tuxiaobei.com/video-album/Fqjpx2H_-QaYNAYn2MekRuDpeyUv.jpg"}]';
-    // let str = RSA.encode(text, publicKey);
-    // console.log("加密数据：" + str);
-    // let str1 = 'Wa2c/868VOm0PgpGG2s2aMrDbGOlJRdZXlSGswjFgywd3nZNB7ND8kVMdNB/OsNFoQXJXSJMvPaE73BH7rs8fz54JGdYQK+qTgfQRqQZvomCjbzseSR4bm4NOrtIOOslL3WqxlzOuU0M1P1eERmkLEVU2WSyc3RGtJro3b3MOWYCNdKMoZdncfOHJndkl4wm9V3GGc3uH98hs6OxLvBWgXoW9jZQ3n0vR2FtS2KYrPGuSuKGkxlt9Kw5TD6nri142NOimz05WK55Xe04YUQ1VZd51t0wzJGXolWgfzIQaK2zzhk5Zjlm+IQJxXqEWiJ2+O6TJ+lIttvsDSaUflcDXQ==';
-    // let str2 = 'R86mW9DzBw05pxBSh9ECh1stXxINmnudgZBbzU/cz1EcFgrEgdk0Zk4ruAiJZB2fP5c7d3gMmN8+Dv19IfARWSzw85xCEjUhpdcMJ0jn6ZE5H+muadND9LzjeVisojqwYxot3YVdKof7HMhPFN8QR0jfzqhjmnGFTlY1jMXzJK0MSOLNRLDar480CdKNb/cxALC8+xKIlhM9E4B31t8J4rNMUWSCAr49lbZ3jx3PxieBpTQUdDJz96AttR93Pc+c51wrxh0Ch/Mt4Rs09HGMXwIpNV+CxsGwSGRQUlyJo2k3d0WqsVzpz6S8A4VGEMTRLGI3IjEt+eWt7wM3nAXarg==';
-    // let str3 = 'D4eOsRqua+jYA5+ZOR9PLI2PExKjKfArQfv9/wGeG50bQSjWypShJPY6RQfO+rghyf0juzHIUSxqH91OxinhCFkONaF2Vod2QVyphyn9eh73dAcEFKIFFKGXoPCjbMWrr3p4d+hgVrHzrFeGqkRq8JFOvG2L5XDxVfWbV8KmUA0DKuz6QwWg7P4kesy+C7BbLALy5W/wfZchD3gnsBvx/pjFoe11VfAify9isLxg9a15jj52xr6lzQ9kge9C2JcV8yq85bFKaUpJWgobzz+BSIv3lVMU6vgcldmOrhkyiETpFGFGGF00DphGCEoK6uAyyNDh7+Jn8P17zf/DW1wV3A==';
-    // let uncrypted = RSA.decode(str, privateKey);
-    // log('解密数据:'+uncrypted);
-    // uncrypted = RSA.decode(str1, privateKey);
-    // log('解密数据1:'+uncrypted);
-    // uncrypted = RSA.decode(str2, privateKey);
-    // log('解密数据2:'+uncrypted);
-    // uncrypted = RSA.decode(str3, privateKey);
-    // log('解密数据3:'+uncrypted);
-
-    // log('rsax:'+typeof(rsax));
-    // log('rsaX:'+typeof(rsaX));
-    // let data = base64Encode('你好');
-    // let publicKey = 'dzyyds';
-    // console.log(typeof (RSA.encode));
-    // let encryptBase64Data = RSA.encode(data,publicKey);
-    // log('encryptBase64Data:'+encryptBase64Data);
-    // let str = RSA.decode(data,publicKey);
-    // log('str:'+str);
 }
 
 /**
@@ -51,13 +13,10 @@ function init_test(){
 function pre(){
     if(typeof(rule.预处理) === 'string' && rule.预处理 && rule.预处理.trim()){
         let code = rule.预处理.trim();
-        console.log("执行预处理代码:"+code);
         if(code.startsWith('js:')){
             code = code.replace('js:','');
         }
         try {
-            // code里可以进行get 或者 post请求cookie并改变rule.headers 里的cookie
-            //  直接操作 rule_fetch_params 这个变量 .headers.Cookie
             eval(code);
         }catch (e) {
             console.log('预处理执行失败:'+e.message);
@@ -89,8 +48,6 @@ const VERSION = vercode+' 3.9.49beta40 202400426';
  adb logcat -c -b main -b events -b radio -b system
  adb logcat > 2.log DRPY:E | grep -i QuickJS
  * **/
-
-
 /*** 以下是内置变量和解析方法 **/
 const MOBILE_UA = 'Mozilla/5.0 (Linux; Android 11; M2007J3SC Build/RKQ1.200826.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045714 Mobile Safari/537.36';
 const PC_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36';
@@ -98,14 +55,9 @@ const UA = 'Mozilla/5.0';
 const UC_UA = 'Mozilla/5.0 (Linux; U; Android 9; zh-CN; MI 9 Build/PKQ1.181121.001) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.108 UCBrowser/12.5.5.1035 Mobile Safari/537.36';
 const IOS_UA = 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1';
 const RULE_CK = 'cookie'; // 源cookie的key值
-// const KEY = typeof(key)!=='undefined'&&key?key:'drpy_' + (rule.title || rule.host); // 源的唯一标识
 const CATE_EXCLUDE = '首页|留言|APP|下载|资讯|新闻|动态';
 const TAB_EXCLUDE = '猜你|喜欢|下载|剧情|热播';
 const OCR_RETRY = 3;//ocr验证重试次数
-// const OCR_API = 'http://dm.mudery.com:10000';//ocr在线识别接口
-// const OCR_API = 'http://192.168.3.239:5705/parse/ocr';//ocr在线识别接口
-// const OCR_API = 'http://cms.nokia.press/parse/ocr';//ocr在线识别接口
-// const OCR_API = 'http://cms.nokia.press:5707/parse/ocr';//ocr在线识别接口
 const OCR_API = 'http://drpy.nokia.press:8028/ocr/drpy/text';//ocr在线识别接口
 if(typeof(MY_URL)==='undefined'){
     var MY_URL; // 全局注入变量,pd函数需要
@@ -118,13 +70,10 @@ var log;
 var rule_fetch_params;
 var fetch_params; // 每个位置单独的
 var oheaders;
-// var play_url; // 二级详情页注入变量,为了适配js模式0 (不在这里定义了,直接二级里定义了个空字符串)
 var _pdfh;
 var _pdfa;
 var _pd;
-// const DOM_CHECK_ATTR = ['url', 'src', 'href', 'data-original', 'data-src'];
 const DOM_CHECK_ATTR = /(url|src|href|-original|-src|-play|-url|style)$/;
-// 过滤特殊链接,不走urlJoin
 const SPECIAL_URL = /^(ftp|magnet|thunder|ws):/;
 const NOADD_INDEX = /:eq|:lt|:gt|:first|:last|^body$|^#/;  // 不自动加eq下标索引
 const URLJOIN_ATTR = /(url|src|href|-original|-src|-play|-url|style)$/;  // 需要自动urljoin的属性
@@ -228,7 +177,6 @@ if (typeof Object.prototype.values != 'function') {
 }
 if (typeof Array.prototype.join != 'function') {
     Array.prototype.join = function (emoji) {
-        // emoji = emoji||',';
         emoji = emoji||'';
         let self = this;
         let str = "";
@@ -247,7 +195,6 @@ if (typeof Array.prototype.join != 'function') {
 if (typeof Array.prototype.toReversed != 'function') {
     Array.prototype.toReversed = function () {
         const clonedList = this.slice();
-        // 倒序新数组
         const reversedList = clonedList.reverse();
         return reversedList;
     };
@@ -281,7 +228,6 @@ function setResult(d){
         return []
     }
     VODS = [];
-    // print(d);
     d.forEach(function (it){
         let obj = {
             vod_id:it.url||'',
@@ -323,7 +269,6 @@ function setHomeResult(res){
     }
     return setResult(res.list);
 }
-// 猫了个咪
 function rc(js) {
     if (js === 'maomi_aes.js') {
         var a = CryptoJS.enc.Utf8.parse("625222f9149e961d");
@@ -338,8 +283,6 @@ function rc(js) {
                 }).toString(CryptoJS.enc.Utf8)
             },
             En: function (word) {
-                // print(a);
-                // print(word);
                 var Encrypted = CryptoJS.AES.encrypt(word, a, {
                     iv: t,
                     mode: CryptoJS.mode.CBC,
@@ -352,8 +295,6 @@ function rc(js) {
     return {};
 }
 
-// 千万不要用for in 推荐 forEach (for in 会打乱顺序)
-//猫函数
 function maoss(jxurl, ref, key) {
     fetch_params = JSON.parse(JSON.stringify(rule_fetch_params));
     eval(getCryptoJS());
@@ -371,7 +312,6 @@ function maoss(jxurl, ref, key) {
         } else {
             var html = request(jxurl);
         }
-        // print(html);
         if (html.indexOf('&btwaf=') != -1) {
             html = request(jxurl + '&btwaf' + html.match(/&btwaf(.*?)"/)[1], {
                 headers: {
@@ -382,15 +322,8 @@ function maoss(jxurl, ref, key) {
         var token_iv = html.split('_token = "')[1].split('"')[0];
         var key = CryptoJS.enc.Utf8.parse(token_key);
         var iv = CryptoJS.enc.Utf8.parse(token_iv);
-        // log("iv:"+iv);
-        //  log(html);
-        // print(key);
-        // print(iv);
         eval(html.match(/var config = {[\s\S]*?}/)[0] + '');
-        // config.url = config.url.replace(/,/g,'');
-        // print(config.url);
         if (!config.url.startsWith('http')) {
-            //config.url = decodeURIComponent(AES(config.url, key, iv));
             config.url = CryptoJS.AES.decrypt(config.url, key, {
                 iv: iv,
                 padding: CryptoJS.pad.Pkcs7
@@ -410,12 +343,10 @@ function urlencode (str) {
 
 function base64Encode(text){
     return CryptoJS.enc.Base64.stringify(CryptoJS.enc.Utf8.parse(text));
-    // return text
 }
 
 function base64Decode(text){
     return CryptoJS.enc.Utf8.stringify(CryptoJS.enc.Base64.parse(text));
-    // return text
 }
 
 function md5(text) {
@@ -453,11 +384,9 @@ function decodeStr(input,encoding){
 }
 
 function getCryptoJS(){
-    // return request('https://ghproxy.net/https://raw.githubusercontent.com/hjdhnx/dr_py/main/libs/crypto-hiker.js');
     return 'console.log("CryptoJS已装载");'
 }
 
-// 封装的RSA加解密类
 const RSA = {
     decode: function (data, key, option) {
         option = option || {};
@@ -467,7 +396,6 @@ const RSA = {
             const decryptor = new JSEncrypt(); //创建解密对象实例
             decryptor.setPrivateKey(privateKey); //设置秘钥
             let uncrypted = '';
-            // uncrypted = decryptor.decrypt(data);
             uncrypted = decryptor.decryptUnicodeLong(data);
             return uncrypted;
         } else {
@@ -482,16 +410,7 @@ const RSA = {
             const encryptor = new JSEncrypt();
             encryptor.setPublicKey(publicKey); // 设置公钥
             let encrypted = ''; // 加密结果
-            // const textLen = data.length; // 待加密文本长度
-            // let offset = 0; // 分段偏移量
-            // // 分段加密
-            // while (offset < textLen) {
-            //     let chunk = data.slice(offset, chunkSize); // 提取分段数据
-            //     let enc = encryptor.encrypt(chunk); // 加密分段数据
-            //     encrypted += enc; // 连接加密结果
-            //     offset += chunkSize; // 更新偏移量
-            // }
-            encrypted = encryptor.encryptUnicodeLong(data);
+                        encrypted = encryptor.encryptUnicodeLong(data);
             return encrypted
         } else {
             return false
@@ -618,29 +537,19 @@ function fixAdM3u8Ai(m3u8_url) {
         return str.split('').reverse().join('');
     }
 
-    //log('播放的地址：' + m3u8_url);
     let m3u8 = request(m3u8_url);
-    //log('m3u8处理前:' + m3u8);
     m3u8 = m3u8.trim().split('\n').map(it => it.startsWith('#') ? it : urljoin(m3u8_url, it)).join('\n');
-    //log('m3u8处理后:============:' + m3u8);
-    // 获取嵌套m3u8地址
     let last_url = m3u8.split('\n').slice(-1)[0];
     if (last_url.includes('.m3u8') && last_url !== m3u8_url) {
         m3u8_url = last_url;
-        //log('嵌套的m3u8_url:' + m3u8_url);
         m3u8 = request(m3u8_url);
     }
-    //log('----处理有广告的地址----');
     let s = m3u8.trim().split('\n').filter(it => it.trim()).join('\n');
     let ss = s.split('\n')
-    //找出第一条播放地址
     let firststr = ss.find(x => !x.startsWith('#'));
     let maxl = 0;//最大相同字符
     let firststrlen = firststr.length;
-    //log('字符串长度：' + firststrlen);
     let ml = Math.round(ss.length / 2).toString().length;//取数据的长度的位数
-    //log('数据条数的长度：' + ml);
-    //找出最后一条播放地址
     let laststr = ss.toReversed().find((x) => {
         if (!x.startsWith('#')) {
             let k = b(reverseString(firststr), reverseString(x));
@@ -652,7 +561,6 @@ function fixAdM3u8Ai(m3u8_url) {
         return false
     });
     log('最后一条切片：' + laststr);
-    //log('最小相同字符长度：' + maxl);
     let ad_urls = [];
     for (let i = 0; i < ss.length; i++) {
         let s = ss[i];
@@ -672,7 +580,6 @@ function fixAdM3u8Ai(m3u8_url) {
     log('----广告地址----');
     log(ad_urls);
     m3u8 = ss.join('\n');
-    //log('处理完成');
     log('处理耗时：' + (new Date().getTime() - ts).toString());
     return m3u8
 }
@@ -706,7 +613,6 @@ function forceOrder(lists,key,option){
     }
     first+='';
     second+='';
-    // console.log(first,second);
     if(first.match(/(\d+)/)&&second.match(/(\d+)/)){
         let num1 = Number(first.match(/(\d+)/)[1]);
         let num2 = Number(second.match(/(\d+)/)[1]);
@@ -724,8 +630,6 @@ let LISTS = [];// 二级的自定义选集播放列表 如: LISTS=[['第1集$htt
 globalThis.encodeUrl = urlencode;
 globalThis.urlencode = urlencode;
 
-
-
 /**
  *  url拼接
  * @param fromPath 初始当前页面url
@@ -736,27 +640,6 @@ function urljoin(fromPath, nowPath) {
     fromPath = fromPath||'';
     nowPath = nowPath||'';
     return joinUrl(fromPath, nowPath);
-    // try {
-    //     // import Uri from './uri.min.js';
-    //     // var Uri = require('./uri.min.js');
-    //     // eval(request('https://cdn.bootcdn.net/ajax/libs/URI.js/1.19.11/URI.min.js'));
-    //     // let new_uri = URI(nowPath, fromPath);
-
-    //     let new_uri = Uri(nowPath, fromPath);
-    //     new_uri = new_uri.toString();
-    //     // console.log(new_uri);
-    //     // return fromPath + nowPath
-    //     return new_uri
-    // }
-    // catch (e) {
-    //     console.log('urljoin发生错误:'+e.message);
-    //     if(nowPath.startsWith('http')){
-    //         return nowPath
-    //     }if(nowPath.startsWith('/')){
-    //         return getHome(fromPath)+nowPath
-    //     }
-    //     return fromPath+nowPath
-    // }
 }
 var urljoin2 = urljoin;
 
@@ -766,8 +649,6 @@ const defaultParser = {
     pdfa:pdfa2,
     pd:pd2,
 };
-
-
 /**
  *  pdfh原版优化,能取style属性里的图片链接
  * @param html 源码
@@ -832,8 +713,6 @@ function pd2(html,parse,uri){
             ret = urljoin(MY_URL,ret)
         }
     }
-    // MY_URL = getItem('MY_URL',MY_URL);
-    // console.log(`规则${RKEY}打印MY_URL:${MY_URL},uri:${uri}`);
     return ret
 }
 
@@ -849,7 +728,6 @@ const parseTags = {
                 return '';
             }
             if (typeof(html) === 'string'){
-                // print('jsonpath:pdfh字符串转dict');
                 html = JSON.parse(html);
             }
             parse = parse.trim();
@@ -878,7 +756,6 @@ const parseTags = {
                 return '';
             }
             if (typeof(html) === 'string'){
-                // print('jsonpath:pdfa字符串转dict');
                 html = JSON.parse(html);
             }
             parse = parse.trim()
@@ -906,7 +783,6 @@ const parseTags = {
             }
             parse = parse.trim();
             let result = defaultParser.pdfh(html,parse);
-            // print(`pdfh解析${parse}=>${result}`);
             return result;
         },
         pdfa(html, parse) {
@@ -915,7 +791,6 @@ const parseTags = {
             }
             parse = parse.trim();
             let result = defaultParser.pdfa(html,parse);
-            // print(result);
             print(`pdfa解析${parse}=>${result.length}`);
             return result;
         },
@@ -957,9 +832,7 @@ function readFile(filePath){
     var fd = os.open(filePath);
     var buffer = new ArrayBuffer(1024);
     var len = os.read(fd, buffer, 0, 1024);
-    console.log(len);
     let text = String.fromCharCode.apply(null, new Uint8Array(buffer));
-    console.log(text);
     return text
 }
 
@@ -970,7 +843,6 @@ function readFile(filePath){
  */
 function dealJson(html) {
     try {
-        // html = html.match(/[\w|\W|\s|\S]*?(\{[\w|\W|\s|\S]*\})/).group[1];
         html = html.trim();
         if(!((html.startsWith('{') && html.endsWith('}'))||(html.startsWith('[') && html.endsWith(']')))){
             html = '{'+html.match(/.*?\{(.*)\}/m)[1]+'}';
@@ -980,7 +852,6 @@ function dealJson(html) {
     try {
         html = JSON.parse(html);
     }catch (e) {}
-    // console.log(typeof(html));
     return html;
 }
 
@@ -1016,36 +887,24 @@ function verifyCode(url){
     let cookie = '';
     while (cnt < OCR_RETRY){
         try{
-            // let obj = {headers:headers,timeout:timeout};
             let yzm_url = `${host}/index.php/verify/index.html`;
-            console.log(`验证码链接:${yzm_url}`);
             let hhtml = request(yzm_url,{withHeaders:true,toBase64:true},true);
             let json = JSON.parse(hhtml);
             if(!cookie){
-                // print(json);
                 let setCk = Object.keys(json).find(it=>it.toLowerCase()==='set-cookie');
-                // cookie = json['set-cookie']?json['set-cookie'].split(';')[0]:'';
                 cookie = setCk?json[setCk].split(';')[0]:'';
             }
-            // console.log(hhtml);
-            console.log('cookie:'+cookie);
             let img = json.body;
-            // console.log(img);
             let code = OcrApi.classification(img);
-            console.log(`第${cnt+1}次验证码识别结果:${code}`);
             let submit_url = `${host}/index.php/ajax/verify_check?type=search&verify=${code}`;
-            console.log(submit_url);
             let html = request(submit_url,{headers:{Cookie:cookie,'User-Agent':MOBILE_UA},'method':'POST'});
-            // console.log(html);
             html = JSON.parse(html);
             if(html.msg === 'ok'){
-                console.log(`第${cnt+1}次验证码提交成功`);
                 return cookie // 需要返回cookie
             }else if(html.msg!=='ok'&&cnt+1>=OCR_RETRY){
                 cookie = ''; // 需要清空返回cookie
             }
         }catch (e) {
-            console.log(`第${cnt+1}次验证码提交失败:${e.message}`);
             if(cnt+1>=OCR_RETRY){
                 cookie = '';
             }
@@ -1062,7 +921,6 @@ function verifyCode(url){
  */
 function setItem(k,v){
     local.set(RKEY,k,v);
-    console.log(`规则${RKEY}设置${k} => ${v}`)
 }
 
 /**
@@ -1175,14 +1033,6 @@ function request(url,obj,ocr_flag){
         }
     }
     if(typeof(obj.body)!='undefined'&&obj.body&&typeof (obj.body)==='string'){
-        // let data = {};
-        // obj.body.split('&').forEach(it=>{
-        //     data[it.split('=')[0]] = it.split('=')[1]
-        // });
-        // obj.data = data;
-        // delete obj.body
-
-        // 传body加 "Content-Type":"application/x-www-form-urlencoded;" 即可post form
         if(!obj.headers.hasOwnProperty('Content-Type')&&!obj.headers.hasOwnProperty('content-type')){ // 手动指定了就不管
             obj.headers["Content-Type"] = 'application/x-www-form-urlencoded; charset='+rule.encoding;
         }
@@ -1200,12 +1050,8 @@ function request(url,obj,ocr_flag){
     if(obj.redirect===false){
         obj.redirect = 0;
     }
-    console.log(JSON.stringify(obj.headers));
-    // console.log('request:'+url+' obj:'+JSON.stringify(obj));
-    console.log('request:'+url+`|method:${obj.method||'GET'}|body:${obj.body||''}`);
     let res = req(url, obj);
     let html = res.content||'';
-    // console.log(html);
     if(obj.withHeaders){
         let htmlWithHeaders = res.headers;
         htmlWithHeaders.body = html;
@@ -1232,16 +1078,11 @@ print = function (data){
     if(typeof(data)=='object'&&Object.keys(data).length>0){
         try {
             data = JSON.stringify(data);
-            console.log(data);
         }catch (e) {
-            // console.log('print:'+e.message);
-            console.log(typeof(data)+':'+data.length);
             return
         }
     }else if(typeof(data)=='object'&&Object.keys(data).length<1){
-        console.log('null object');
     }else{
-        console.log(data);
     }
 }
 log = print;
@@ -1286,7 +1127,6 @@ function getHtml(url){
     }
     let cookie = getItem(RULE_CK,'');
     if(cookie){
-        // log('有cookie:'+cookie);
         if(obj.headers && ! Object.keys(obj.headers).map(it=>it.toLowerCase()).includes('cookie')){
             log('历史无cookie,新增过验证后的cookie');
             obj.headers['Cookie'] = cookie;
@@ -1406,7 +1246,6 @@ function homeParse(homeObj) {
     if(homeObj.filter){
         resp.filters = homeObj.filter;
     }
-    console.log(JSON.stringify(resp));
     return JSON.stringify(resp);
 
 }
@@ -1437,8 +1276,6 @@ function homeVodParse(homeVodObj){
     fetch_params = JSON.parse(JSON.stringify(rule_fetch_params));
     let d = [];
     MY_URL = homeVodObj.homeUrl;
-    // setItem('MY_URL',MY_URL);
-    console.log(MY_URL);
     let t1 = (new Date()).getTime();
     let p = homeVodObj.推荐;
     print('p:'+p);
@@ -1471,18 +1308,14 @@ function homeVodParse(homeVodObj){
         _pd = _ps.pd;
         let is_json = p0.startsWith('json:');
         p0 = p0.replace(/^(jsp:|json:|jq:)/,'');
-        // print(p[0]);
         let html = homeHtmlCache || getHtml(MY_URL);
         homeHtmlCache = undefined;
         if(is_json){
-            // print('是json,开始处理');
             html = dealJson(html);
         }
         try {
-            console.log('double:' + homeVodObj.double);
             if (homeVodObj.double) {
                 let items = _pdfa(html, p0);
-                // console.log(items.length);
                 let p1 = getPP(p,1,pp,0);
                 let p2 = getPP(p,2,pp,1);
                 let p3 = getPP(p,3,pp,2);
@@ -1490,9 +1323,7 @@ function homeVodParse(homeVodObj){
                 let p5 = getPP(p,5,pp,4);
                 let p6 = getPP(p,6,pp,5);
                 for (let item of items) {
-                    // console.log(p[1]);
                     let items2 = _pdfa(item, p1);
-                    // console.log(items2.length);
                     for (let item2 of items2) {
                         try {
                             let title = _pdfh(item2, p2);
@@ -1526,18 +1357,13 @@ function homeVodParse(homeVodObj){
                                 vod_content: content,
                                 vod_id: vid
                             };
-                            // print(vod);
                             d.push(vod);
                         } catch (e) {
                             console.log('首页列表双层定位处理发生错误:'+e.message);
                         }
 
                     }
-
-
                 }
-
-
             } else {
                 let items = _pdfa(html, p0);
                 let p1 = getPP(p,1,pp,1);
@@ -1594,8 +1420,6 @@ function homeVodParse(homeVodObj){
         }
     }
     let t2 = (new Date()).getTime();
-    console.log('加载首页推荐耗时:'+(t2-t1)+'毫秒');
-    // console.log(JSON.stringify(d));
     if(rule.图片替换 && rule.图片替换.includes('=>')){
         let replace_from = rule.图片替换.split('=>')[0];
         let replace_to = rule.图片替换.split('=>')[1];
@@ -1632,7 +1456,6 @@ function categoryParse(cateObj) {
         return '{}'
     }
     let d = [];
-    // let url = cateObj.url.replaceAll('fyclass', cateObj.tid).replaceAll('fypage', cateObj.pg);
     let url = cateObj.url.replaceAll('fyclass', cateObj.tid);
     if(cateObj.pg === 1 && url.includes('[')&&url.includes(']')){
         url = url.split('[')[1].split(']')[0];
@@ -1648,7 +1471,6 @@ function categoryParse(cateObj) {
         }else{
             url = url.replace('fyfilter', rule.filter_url);
         }
-        // console.log('filter:'+cateObj.filter);
         let fl = cateObj.filter?cateObj.extend:{};
         // 自动合并 不同分类对应的默认筛选
         if(rule.filter_def && typeof(rule.filter_def)==='object'){
@@ -1667,17 +1489,13 @@ function categoryParse(cateObj) {
         }
         let new_url;
         new_url = cheerio.jinja2(url,{fl:fl});
-        // console.log('jinjia2执行后的new_url类型为:'+typeof(new_url));
         url = new_url;
     }
     if(/fypage/.test(url)){
         if(url.includes('(')&&url.includes(')')){
             let url_rep = url.match(/.*?\((.*)\)/)[1];
-            // console.log(url_rep);
             let cnt_page = url_rep.replaceAll('fypage', cateObj.pg);
-            // console.log(cnt_page);
             let cnt_pg = eval(cnt_page);
-            // console.log(cnt_pg);
             url = url.replaceAll(url_rep,cnt_pg).replaceAll('(','').replaceAll(')','');
         }else{
             url = url.replaceAll('fypage',cateObj.pg);
@@ -1685,8 +1503,6 @@ function categoryParse(cateObj) {
     }
 
     MY_URL = url;
-    // setItem('MY_URL',MY_URL);
-    console.log(MY_URL);
     p = p.trim();
     const MY_CATE = cateObj.tid;
     if(p.startsWith('js:')){
@@ -1756,7 +1572,6 @@ function categoryParse(cateObj) {
             }
         });
     }
-    // print(d);
     if(d.length>0){
         print(d.slice(0,2));
     }
@@ -1776,7 +1591,6 @@ function categoryParse(cateObj) {
         'total': 999,
         'list': d,
     });
-    // print(vod);
     return vod
 }
 
@@ -1807,11 +1621,8 @@ function searchParse(searchObj) {
     if(/fypage/.test(url)){
         if(url.includes('(')&&url.includes(')')){
             let url_rep = url.match(/.*?\((.*)\)/)[1];
-            // console.log(url_rep);
             let cnt_page = url_rep.replaceAll('fypage', searchObj.pg);
-            // console.log(cnt_page);
             let cnt_pg = eval(cnt_page);
-            // console.log(cnt_pg);
             url = url.replaceAll(url_rep,cnt_pg).replaceAll('(','').replaceAll(')','');
         }else{
             url = url.replaceAll('fypage',searchObj.pg);
@@ -1819,9 +1630,6 @@ function searchParse(searchObj) {
     }
 
     MY_URL = url;
-    console.log(MY_URL);
-    // log(searchObj.搜索);
-    // setItem('MY_URL',MY_URL);
     if(p.startsWith('js:')){
         const TYPE = 'search';
         const MY_PAGE = searchObj.pg;
@@ -1842,7 +1650,6 @@ function searchParse(searchObj) {
         _pd = _ps.pd;
         let is_json = p0.startsWith('json:');
         p0 = p0.replace(/^(jsp:|json:|jq:)/,'');
-        // print('1381 p0:'+p0);
         try {
             let req_method = MY_URL.split(';').length>1?MY_URL.split(';')[1].toLowerCase():'get';
             let html;
@@ -1851,12 +1658,6 @@ function searchParse(searchObj) {
                 let rurl = rurls[0]
                 let params = rurls.length > 1 ?rurls[1]:'';
                 print(`post=》rurl:${rurl},params:${params}`);
-                // let new_dict = {};
-                // let new_tmp = params.split('&');
-                // new_tmp.forEach(i=>{
-                //     new_dict[i.split('=')[0]] = i.split('=')[1];
-                // });
-                // html = post(rurl,{body:new_dict});
                 let _fetch_params = JSON.parse(JSON.stringify(rule_fetch_params));
                 let postData = {body:params};
                 Object.assign(_fetch_params,postData);
@@ -1882,27 +1683,17 @@ function searchParse(searchObj) {
                 if(/系统安全验证|输入验证码/.test(html)){
                     let cookie = verifyCode(MY_URL);
                     if(cookie){
-                        console.log(`本次成功过验证,cookie:${cookie}`);
                         setItem(RULE_CK,cookie);
                     }else{
-                        console.log(`本次自动过搜索验证失败,cookie:${cookie}`);
                     }
-                    // obj.headers['Cookie'] = cookie;
                     html = getHtml(MY_URL);
                 }
                 if(!html.includes(searchObj.wd)){
-                    console.log('搜索结果源码未包含关键字,疑似搜索失败,正为您打印结果源码');
-                    console.log(html);
                 }
                 if(is_json){
-                    // console.log(html);
                     html = dealJson(html);
-                    // console.log(JSON.stringify(html));
                 }
-                // console.log(html);
                 let list = _pdfa(html, p0);
-                // print(list.length);
-                // print(list);
                 let p1 = getPP(p, 1, pp, 1);
                 let p2 = getPP(p, 2, pp, 2);
                 let p3 = getPP(p, 3, pp, 3);
@@ -1957,7 +1748,6 @@ function searchParse(searchObj) {
             }
         });
     }
-    // print(d);
     return JSON.stringify({
         'page': parseInt(searchObj.pg),
         'pagecount': 10,
@@ -1980,12 +1770,10 @@ function detailParse(detailObj){
     let vod_pic = '';
     let vod_id = orId;
     if(rule.二级==='*'){
-        // vod_id = orId.split('@@')[0]; // 千万不能分割
         let extra = orId.split('@@');
         vod_name = extra.length>1?extra[1]:vod_name;
         vod_pic = extra.length>2?extra[2]:vod_pic;
     }
-    // print(vod_pic);
     let vod = {
         vod_id: vod_id, //"id",
         vod_name: vod_name,
@@ -2013,8 +1801,6 @@ function detailParse(detailObj){
             print(`二级访问前执行代码出现错误:${e.message}`)
         }
     }
-    // console.log(MY_URL);
-    // setItem('MY_URL',MY_URL);
     if(p==='*'){
         vod.vod_play_from = '道长在线';
         vod.vod_remarks = detailUrl;
@@ -2027,7 +1813,6 @@ function detailParse(detailObj){
         var play_url = '';
         eval(p.trim().replace('js:',''));
         vod = VOD;
-        console.log(JSON.stringify(vod));
     }else if(p&&typeof(p)==='object'){
         let tt1 = (new Date()).getTime();
         if(!html){
@@ -2048,8 +1833,6 @@ function detailParse(detailObj){
         }else{
             print('二级默认jq');
             _ps = parseTags.jq;
-            // print('二级默认jsp');
-            // _ps = parseTags.jsp;
         }
         let tt2 = (new Date()).getTime();
         print(`二级${MY_URL}获取并装载源码耗时:${tt2-tt1}毫秒`);
@@ -2068,7 +1851,6 @@ function detailParse(detailObj){
                 vod.vod_remarks =  _pdfh(html, p1[0]).replace(/\n|\t/g,'').trim();
                 vod.vod_year = p1.length > 1 ? _pdfh(html, p1[1]).replace(/\n|\t/g,'').trim():'';
                 vod.vod_area = p1.length > 2 ? _pdfh(html, p1[2]).replace(/\n|\t/g,'').trim():'';
-                // vod.vod_actor = p1.length > 3 ? _pdfh(html, p1[3]).replaceAll('\n', ' ').trim():'';
                 vod.vod_actor = p1.length > 3 ? _pdfh(html, p1[3]).replace(/\n|\t/g,'').trim():'';
                 vod.vod_director = p1.length > 4 ? _pdfh(html, p1[4]).replace(/\n|\t/g,'').trim():'';
             }
@@ -2097,8 +1879,6 @@ function detailParse(detailObj){
             print('开始执行重定向代码:'+p.重定向);
             html = eval(p.重定向.replace('js:',''));
         }
-
-// console.log(2);
         if(p.tabs){
             if(p.tabs.startsWith('js:')){
                 print('开始执行tabs代码:'+p.tabs);
@@ -2107,18 +1887,14 @@ function detailParse(detailObj){
                 playFrom = TABS;
             }else{
                 let p_tab = p.tabs.split(';')[0];
-                // console.log(p_tab);
                 let vHeader = _pdfa(html, p_tab);
-                console.log(vHeader.length);
                 let tab_text = p.tab_text||'body&&Text';
-                // print('tab_text:'+tab_text);
                 let new_map = {};
                 for(let v of vHeader){
                     let v_title = _pdfh(v,tab_text).trim();
                     if(!v_title){
                         v_title = '线路空'
                     }
-                    console.log(v_title);
                     if(tab_exclude&& (new RegExp(tab_exclude)).test(v_title)){
                         continue;
                     }
@@ -2133,13 +1909,11 @@ function detailParse(detailObj){
                     playFrom.push(v_title);
                 }
             }
-            console.log(JSON.stringify(playFrom));
         }else{
             playFrom = ['道长在线']
         }
         vod.vod_play_from = playFrom.join(vod_play_from);
 
-// console.log(3);
         let vod_play_url = '$$$';
         let vod_tab_list = [];
         if(p.lists){
@@ -2151,7 +1925,6 @@ function detailParse(detailObj){
                     eval(p.lists.replace('js:',''));
                     for(let i in LISTS){
                         if(LISTS.hasOwnProperty(i)){
-                            // print(i);
                             try {
                                 LISTS[i] = LISTS[i].map(it=>it.split('$').slice(0,2).join('$'));
                             }catch (e) {
@@ -2167,9 +1940,6 @@ function detailParse(detailObj){
             }else{
                 let list_text = p.list_text||'body&&Text';
                 let list_url = p.list_url||'a&&href';
-                // print('list_text:'+list_text);
-                // print('list_url:'+list_url);
-                // print('list_parse:'+p.lists);
                 let is_tab_js = p.tabs.trim().startsWith('js:');
                 for(let i=0;i<playFrom.length;i++){
                     let tab_name = playFrom[i];
@@ -2177,20 +1947,15 @@ function detailParse(detailObj){
                     let p1 = p.lists.replaceAll('#idv', tab_name).replaceAll('#id', i);
                     tab_ext = tab_ext.replaceAll('#idv', tab_name).replaceAll('#id', i);
                     let tabName = tab_ext?_pdfh(html, tab_ext):tab_name;
-                    console.log(tabName);
-                    // print('tab_ext:'+tab_ext);
                     let new_vod_list = [];
                     let tt1 = (new Date()).getTime();
-                    // print('pdfl:'+typeof (pdfl));
                     if(typeof (pdfl) ==='function'){
                         new_vod_list = pdfl(html, p1, list_text, list_url, MY_URL);
                     }else {
                         let vodList = [];
                         try {
                             vodList =  _pdfa(html, p1);
-                            console.log('len(vodList):'+vodList.length);
                         }catch (e) {
-                            // console.log(e.message);
                         }
                         for (let i = 0; i < vodList.length; i++) {
                             let it = vodList[i];
@@ -2199,9 +1964,7 @@ function detailParse(detailObj){
                     }
                     if(new_vod_list.length>0){
                         new_vod_list = forceOrder(new_vod_list,'',x=>x.split('$')[0]);
-                        console.log(`drpy影响性能代码共计列表数循环次数:${new_vod_list.length},耗时:${(new Date()).getTime()-tt1}毫秒`);
                     }
-                    // print(new_vod_list);
                     let vlist = new_vod_list.join('#');
                     vod_tab_list.push(vlist);
                 }
@@ -2222,10 +1985,7 @@ function detailParse(detailObj){
         vod.vod_id = vod_id;
     }
     let t2 = (new Date()).getTime();
-    console.log(`加载二级界面${MY_URL}耗时:${t2-t1}毫秒`);
-    // print(vod);
     vod = vodDeal(vod);
-    // print(vod);
     return JSON.stringify({
         list: [vod]
     })
@@ -2327,7 +2087,6 @@ function playParse(playObj){
         parse:1,
         url:input,
         flag:flag,
-        // url:urlencode(input),
         jx:tellIsJx(input)
     };
     let lazy_play;
@@ -2350,16 +2109,12 @@ function playParse(playObj){
     }else{
         lazy_play =  common_play;
     }
-    // print('play_json:'+typeof(rule.play_json));
-    // console.log(Array.isArray(rule.play_json));
     if(Array.isArray(rule.play_json) && rule.play_json.length >0){ // 数组情况判断长度大于0
         let web_url = lazy_play.url;
         for(let pjson of rule.play_json){
             if(pjson.re && (pjson.re==='*'||web_url.match(new RegExp(pjson.re)))){
                 if(pjson.json && typeof(pjson.json)==='object'){
                     let base_json = pjson.json;
-                    // print('开始合并:');
-                    // print(base_json);
                     lazy_play = Object.assign(lazy_play,base_json);
                     break;
                 }
@@ -2378,7 +2133,6 @@ function playParse(playObj){
         };
         lazy_play = Object.assign(lazy_play,base_json);
     }
-    console.log(JSON.stringify(lazy_play));
     return JSON.stringify(lazy_play);
 }
 
@@ -2437,20 +2191,8 @@ function isVideoParse(isVideoObj){
  * @param ext
  */
 function init(ext) {
-    console.log('init');
     try {
-        // make shared jsContext happy muban不能import,不然会造成换源继承后变量被篡改
-        // if (typeof (globalThis.mubanJs) === 'undefined') {
-        //     let mubanJs = request('https://ghproxy.net/https://raw.githubusercontent.com/hjdhnx/dr_py/main/js/模板.js', { 'User-Agent': MOBILE_UA });
-        //     mubanJs = mubanJs.replace('export default', '(function() {return muban;}()) // export default');
-        //     // console.log(mubanJs);
-        //     globalThis.mubanJs = mubanJs;
-        // }
-        // let muban = eval(globalThis.mubanJs);
-
         let muban = 模板.getMubans();
-        // print(typeof (muban));
-        // print(muban);
         if (typeof ext == 'object'){
             rule = ext;
         } else if (typeof ext == 'string') {
@@ -2478,7 +2220,6 @@ function init(ext) {
         rule.host = (rule.host||'').rstrip('/');
         HOST = rule.host;
         if(rule.hostJs){
-            console.log(`检测到hostJs,准备执行...`);
             try {
                 eval(rule.hostJs);
                 rule.host = HOST.rstrip('/');
@@ -2533,18 +2274,15 @@ function init(ext) {
                 for(let k of header_keys){
                     if(k.toLowerCase() === 'user-agent'){
                         let v = rule.headers[k];
-                        console.log(v);
                         if(['MOBILE_UA','PC_UA','UC_UA','IOS_UA','UA'].includes(v)){
                             rule.headers[k] = eval(v);
                         }
                     }else if(k.toLowerCase() === 'cookie'){
                         let v = rule.headers[k];
                         if(v && v.startsWith('http')){
-                            console.log(v);
-                            try {
+                                try {
                                 v = fetch(v);
-                                console.log(v);
-                                rule.headers[k] = v;
+                                        rule.headers[k] = v;
                             }catch (e) {
                                 console.log(`从${v}获取cookie发生错误:`+e.message);
                             }
@@ -2555,7 +2293,6 @@ function init(ext) {
                 console.log('处理headers发生错误:'+e.message);
             }
         }
-        // print(rule.headers);
         rule_fetch_params  = {'headers': rule.headers||false, 'timeout': rule.timeout, 'encoding': rule.encoding};
         oheaders = rule.headers||{};
         RKEY = typeof(key)!=='undefined'&&key?key:'drpy_' + (rule.title || rule.host);
@@ -2574,7 +2311,6 @@ let homeHtmlCache = undefined;
  * @returns {string}
  */
 function home(filter) {
-    console.log("home");
     let homeObj = {
         filter:rule.filter||false,
         MY_URL: rule.homeUrl,
@@ -2592,7 +2328,6 @@ function home(filter) {
  * @returns {string}
  */
 function homeVod(params) {
-    console.log("homeVod");
     let homeVodObj = {
         推荐:rule.推荐,
         double:rule.double,
@@ -2600,7 +2335,6 @@ function homeVod(params) {
         detailUrl:rule.detailUrl
     };
     return homeVodParse(homeVodObj)
-    // return "{}";
 }
 
 /**
@@ -2620,7 +2354,6 @@ function category(tid, pg, filter, extend) {
         filter: filter,
         extend: extend
     };
-    // console.log(JSON.stringify(extend));
     return categoryParse(cateObj)
 }
 
@@ -2699,7 +2432,6 @@ function search(wd, quick, pg) {
         pg: pg||1,
         quick: quick,
     };
-    // console.log(JSON.stringify(searchObj));
     return searchParse(searchObj)
 }
 
@@ -2721,8 +2453,6 @@ function proxy(params){
     };
     return proxyParse(proxyObj)
 }
-
-
 /**
  * 是否启用辅助嗅探功能,启用后可以根据isVideo函数进行手动识别为视频的链接地址。默认为false
  * @returns {*|boolean|boolean}
@@ -2730,7 +2460,6 @@ function proxy(params){
 function sniffer(){
     let enable_sniffer =  rule.sniffer || false;
     if(enable_sniffer){
-        // log('准备执行辅助嗅探代理规则:\n'+rule.isVideo);
         log('开始执行辅助嗅探代理规则...');
     }
     return enable_sniffer
@@ -2762,31 +2491,6 @@ function isVideo(url){
     return result
 }
 
-function DRPY(){//导出函数
-    return {
-        init: init,
-        home: home,
-        homeVod: homeVod,
-        category: category,
-        detail: detail,
-        play: play,
-        search: search,
-        proxy:proxy,
-        sniffer:sniffer,
-        isVideo:isVideo
-    }
-}
-
-/**
- * 导出函数无法简写成下面的形式:
-
- export default {
-  ...DRPY,
-  DRPY
- }
-
- */
-
 // 导出函数对象
 export default {
     init,
@@ -2798,6 +2502,5 @@ export default {
     search,
     proxy,
     sniffer,
-    isVideo,
-    DRPY,
+    isVideo
 }
