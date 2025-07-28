@@ -1,0 +1,33 @@
+{
+  "name": "vvip-parser",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Node.js based video parser with spider framework",
+  "main": "index.js",
+  "bin": {
+    "vvip-parser": "./cli.js"
+  },
+  "scripts": {
+    "start": "node cli.js",
+    "test": "node test.js"
+  },
+  "keywords": [
+    "video",
+    "parser",
+    "spider",
+    "crawler"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "cheerio": "^1.0.0-rc.12",
+    "commander": "^11.1.0",
+    "crypto-js": "^4.2.0",
+    "deasync": "^0.1.30",
+    "node-forge": "^1.3.1"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
