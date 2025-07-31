@@ -51,7 +51,7 @@ node --experimental-vm-modules cli.js run tests/drpy2.js -e tests/360.js -m sear
 # 📖 获取详情页（需要有效的视频ID）
 node --experimental-vm-modules cli.js run tests/drpy2.js -e tests/360.js -m detail -a '[\"video_id\"]' -q
 
-# 🧪 完整功能测试
+# 🧪 完整功能测试（测试所有10个方法）
 node --experimental-vm-modules cli.js test tests/drpy2.js -e tests/360.js
 ```
 
@@ -81,6 +81,9 @@ node --experimental-vm-modules cli.js run <script> [options]
   detail       获取视频详情
   search       搜索视频
   play         获取播放地址
+  sniffer      嗅探功能
+  isVideo      视频格式检测
+  proxy        代理功能
 ```
 
 #### `test` 命令 - 全面测试
@@ -88,8 +91,20 @@ node --experimental-vm-modules cli.js run <script> [options]
 ```bash
 node --experimental-vm-modules cli.js test <script> -e <rules>
 
-# 示例：测试 drpy2 + 360影视规则的所有功能
+# 示例：测试 drpy2 + 360影视规则的所有10个方法功能
 node --experimental-vm-modules cli.js test tests/drpy2.js -e tests/360.js
+
+测试覆盖方法：
+  ✅ init         - 初始化爬虫
+  ✅ home         - 获取首页分类
+  ✅ homeVod      - 获取首页推荐
+  ✅ category     - 获取分类内容
+  ✅ detail       - 获取视频详情
+  ✅ play         - 获取播放地址
+  ✅ search       - 搜索功能
+  ✅ sniffer      - 嗅探功能
+  ✅ isVideo      - 视频格式检测
+  ✅ proxy        - 代理功能
 ```
 
 #### 静默模式 `-q` 的优势

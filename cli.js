@@ -3,11 +3,6 @@
 import { Command } from 'commander';
 import { loadSpider } from './lib/spider.js';
 import { promises as fs } from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 const program = new Command();
 
@@ -239,6 +234,15 @@ program
                 case 'play':
                     result = await spider.play(...args);
                     break;
+                case 'proxy':
+                    result = await spider.proxy(...args);
+                    break;
+                case 'sniffer':
+                    result = await spider.sniffer(...args);
+                    break;
+                case 'isVideo':
+                    result = await spider.isVideo(...args);
+                    break;
                 default:
                     throw new Error(`未知方法: ${options.method}`);
             }
@@ -348,6 +352,34 @@ program
             const searchResult = await spider.search('测试', false, '1');
             const searchData = JSON.parse(searchResult);
             console.log(`✓ 搜索到 ${searchData.list?.length || 0} 个结果\n`);
+            
+            // 测试嗅探功能
+            console.log('8. 测试嗅探功能...');
+            const snifferResult = await spider.sniffer();
+            console.log(`✓ 嗅探功能状态: ${snifferResult ? '启用' : '禁用'}\n`);
+            
+            // 测试视频格式检测
+            console.log('9. 测试视频格式检测...');
+            const testUrls = [
+                'https://example.com/video.mp4',
+                'https://example.com/playlist.m3u8',
+                'https://example.com/page.html'
+            ];
+            for (const url of testUrls) {
+                try {
+                    const isVideoResult = await spider.isVideo(url);
+                    console.log(`  ${url}: ${isVideoResult ? '是视频' : '非视频'}`);
+                } catch (error) {
+                    console.log(`  ${url}: 检测失败 (${error.message})`);
+                }
+            }
+            console.log('✓ 视频格式检测完成\n');
+            
+            // 测试代理功能
+            console.log('10. 测试代理功能...');
+            const proxyResult = await spider.proxy({ url: 'https://example.com/test' });
+            console.log(`✓ 代理功能响应码: ${proxyResult[0]}\n`);
+            
             
             // 销毁爬虫
             await spider.destroy();

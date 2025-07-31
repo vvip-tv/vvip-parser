@@ -58,6 +58,9 @@ node --experimental-vm-modules cli.js run tests/drpy2.js -e tests/360.js -m cate
 
 # 搜索功能
 node --experimental-vm-modules cli.js run tests/drpy2.js -e tests/360.js -m search -a '["复仇者联盟"]'
+
+# 完整功能测试（测试所有10个方法）
+node --experimental-vm-modules cli.js test tests/drpy2.js -e tests/360.js
 ```
 
 ### 编程接口
@@ -145,12 +148,17 @@ var rule = {
 ### 测试验证
 - drpy2.js 版本：3.9.49beta40 
 - 360影视规则成功加载和初始化
-- **完整功能测试通过**：
+- **完整功能测试通过**（10个方法）：
   - ✅ init: 成功初始化并加载规则
   - ✅ home: 返回 4 个分类和完整过滤器配置
   - ✅ homeVod: 返回推荐内容列表
   - ✅ category: 成功获取分类列表，返回视频条目
+  - ✅ detail: 获取视频详情成功
+  - ✅ play: 获取播放地址成功
   - ✅ search: 成功搜索功能，返回相关结果
+  - ✅ sniffer: 嗅探功能状态检测
+  - ✅ isVideo: 视频格式检测（支持自定义规则和默认检测）
+  - ✅ proxy: 代理功能响应
 
 ## 开发注意事项
 
