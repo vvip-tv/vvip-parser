@@ -6,7 +6,8 @@
 
 - 🚀 **完整 drpy2.js 支持** - 支持 drpy2 视频解析框架，兼容各种站点规则
 - 🔧 **VM SourceTextModule** - 使用 Node.js 的 vm.SourceTextModule 实现 ES6 模块加载
-- 📦 **零依赖设计** - 所有外部依赖已本地化，无需网络连接
+- 🎯 **HTML解析支持** - 完整实现 pd、pdfh、pdfa、pdfl 四个全局解析方法
+- 📦 **标准依赖管理** - 使用 npm 管理依赖，支持 cheerio 等标准库
 - ⚡ **高性能执行** - 沙箱环境隔离，支持同步HTTP请求
 - 🛠️ **完整CLI工具** - 命令行界面，支持JSON输出和自动退出
 - 🔒 **QuickJS兼容** - 保持与原 QuickJS 版本的完整 API 兼容性

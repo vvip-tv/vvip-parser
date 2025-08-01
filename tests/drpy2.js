@@ -645,9 +645,9 @@ var urljoin2 = urljoin;
 
 // 内置 pdfh,pdfa,pd
 const defaultParser = {
-    pdfh:pdfh2,
-    pdfa:pdfa2,
-    pd:pd2,
+    pdfh:pdfh,
+    pdfa:pdfa,
+    pd:pd,
 };
 /**
  *  pdfh原版优化,能取style属性里的图片链接

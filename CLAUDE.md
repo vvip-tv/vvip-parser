@@ -8,7 +8,8 @@ vvip-parser 是一个基于 Node.js 的视频解析爬虫框架，成功从 Quic
 
 - **drpy2.js 框架支持**：完整支持 drpy2 视频解析框架
 - **VM SourceTextModule**：使用 Node.js 的 vm.SourceTextModule 实现 ES6 模块加载
-- **零依赖设计**：所有外部依赖已本地化到 tests/ 目录
+- **HTML解析支持**：完整实现 pd、pdfh、pdfa、pdfl 四个全局解析方法
+- **标准依赖管理**：使用 npm 管理依赖，支持 cheerio 等标准库
 - **CLI 自动退出**：命令执行完成后正确清理资源并退出进程
 - **QuickJS 兼容**：保持与原 QuickJS 版本的 API 兼容性
 
@@ -97,6 +98,24 @@ async function linker(specifier) {
 }
 ```
 
+### HTML解析器 (lib/parser.js)
+基于 Java 版本实现的完整 HTML 解析功能，支持 drpy2.js 框架的所有解析需求：
+
+```javascript
+// 四个核心全局方法
+pd(html, rule, urlKey)     // 解析DOM获取URL，支持URL拼接
+pdfh(html, rule)           // 解析DOM获取第一个匹配项
+pdfa(html, rule)           // 解析DOM获取数组
+pdfl(html, rule, texts, urls, urlKey)  // 解析DOM获取列表
+```
+
+**技术特点：**
+- 使用标准 npm cheerio 依赖进行 HTML 解析
+- 完整支持 Hiker 规则语法转换为 jQuery 选择器
+- 支持 `:eq(n)` 索引选择器和排除规则 `--`
+- 自动处理URL拼接和属性提取
+- 与 Java 版本 API 完全兼容
+
 ### 沙箱环境
 ```javascript
 function createSandbox(scriptPath) {
@@ -105,6 +124,7 @@ function createSandbox(scriptPath) {
         req, http, _http,           // HTTP 请求
         md5X, aesX, rsaX,          // 加密工具
         joinUrl, s2t, t2s,         // 工具函数
+        pd, pdfh, pdfa, pdfl,      // HTML解析函数
         local,                     // 本地存储
         module: { exports: {} },
         exports: {},
@@ -183,6 +203,7 @@ var rule = {
 vvip-parser/
 ├── lib/               # 核心库
 │   ├── spider.js      # 爬虫核心（SourceTextModule）
+│   ├── parser.js      # HTML解析器（pd、pdfh、pdfa、pdfl）
 │   ├── http.js        # HTTP 请求
 │   ├── crypto.js      # 加密功能
 │   ├── utils.js       # 工具函数
@@ -215,4 +236,18 @@ node --experimental-vm-modules cli.js run tests/drpy2.js -e tests/360.js -m home
 2. **子进程方案成功**：最终采用动态生成Node.js脚本 + execSync的方案，完美解决同步请求需求
 3. **性能与兼容性**：新方案既保持了与原QuickJS版本的完全兼容，又具有良好的性能表现
 
-这个项目成功实现了从 QuickJS Android 爬虫框架到 Node.js 的完整迁移，特别是对 drpy2.js 框架的完整支持，为视频解析爬虫提供了强大且灵活的解决方案。经过系统性测试，所有核心功能均正常工作，可以投入生产使用。
+### HTML解析方法的成功实现
+基于 Java 版本完整实现了 HTML 解析功能，这是项目的重要里程碑：
+
+1. **完整功能移植**：成功将 Java 版本的 Parser 类完整移植到 Node.js
+2. **标准依赖使用**：从本地化 cheerio 文件改为使用 npm 标准依赖，提升稳定性
+3. **API 完全兼容**：pd、pdfh、pdfa、pdfl 四个方法与 Java 版本行为完全一致
+4. **性能优化**：使用官方 cheerio 版本，性能和稳定性更优
+
+**测试验证**：
+- ✅ pd 方法：DOM解析获取URL，支持URL拼接
+- ✅ pdfh 方法：DOM解析获取第一个匹配项
+- ✅ pdfa 方法：DOM解析获取数组
+- ✅ pdfl 方法：DOM解析获取列表，支持文本和链接提取
+
+这个项目成功实现了从 QuickJS Android 爬虫框架到 Node.js 的完整迁移，特别是对 drpy2.js 框架的完整支持，包括关键的 HTML 解析功能。为视频解析爬虫提供了强大且灵活的解决方案。经过系统性测试，所有核心功能均正常工作，可以投入生产使用。
