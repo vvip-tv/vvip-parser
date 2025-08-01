@@ -23,10 +23,11 @@
 
 ```bash
 # 克隆项目
-git clone https://github.com/your-repo/vvip-parser.git
+git clone https://github.com/vvip-tv/vvip-parser.git
 cd vvip-parser
 
-# 无需安装依赖 - 已本地化
+# 安装依赖
+npm install
 
 # 运行 drpy2 + 360影视规则获取首页（推荐测试）
 node --experimental-vm-modules cli.js run tests/drpy2.js -e tests/360.js -m home
@@ -164,21 +165,22 @@ async function example() {
 vvip-parser/
 ├── 📁 lib/                    # 核心库
 │   ├── spider.js              # 爬虫核心（VM SourceTextModule）
-│   ├── http.js                # 同步HTTP请求（deasync + curl）
+│   ├── parser.js              # HTML解析器（pd/pdfh/pdfa/pdfl）
+│   ├── http.js                # 同步HTTP请求（execSync + curl）
 │   ├── crypto.js              # 加密功能（MD5/AES/RSA）
 │   ├── utils.js               # 工具函数
 │   └── local.js               # 本地存储
 ├── 📁 tests/                  # drpy2框架和依赖（本地化）
 │   ├── drpy2.js               # drpy2核心框架（已优化）
 │   ├── 360.js                 # 360影视规则（推荐测试）
-│   ├── cheerio.min.js         # HTML解析库
+│   ├── cheerio.min.js         # HTML解析库（备用）
 │   ├── crypto-js.js           # 加密库
 │   ├── jsencrypt.js           # RSA加密
 │   ├── 模板.js                # drpy2模板
 │   └── gbk.js                 # GBK编码支持
 ├── 📁 quickjs/                # QuickJS源码参考
 ├── cli.js                     # CLI入口
-├── package.json               # 项目配置
+├── package.json               # 项目配置（包含cheerio等依赖）
 ├── CLAUDE.md                  # 项目记忆
 └── README.md                  # 本文档
 ```
@@ -328,13 +330,41 @@ function req(url, options = {}) {
 }
 ```
 
-### 依赖本地化策略
+### HTML解析器架构
+
+项目实现了完整的HTML解析功能：
+
+```javascript
+// lib/parser.js - 核心HTML解析器
+import * as cheerio from 'cheerio';  // 使用npm标准依赖
+
+// 四个全局解析方法
+pd(html, rule, urlKey)     // 解析DOM获取URL，支持URL拼接
+pdfh(html, rule)           // 解析DOM获取第一个匹配项  
+pdfa(html, rule)           // 解析DOM获取数组
+pdfl(html, rule, texts, urls, urlKey)  // 解析DOM获取列表
+```
+
+**技术特点：**
+- 基于Java版本完整移植的HTML解析逻辑
+- 支持Hiker规则语法转换为jQuery选择器
+- 自动处理`:eq()`、`--`排除规则等语法
+- 完整的URL拼接和属性提取功能
+
+### 依赖管理策略
 
 ```
-tests/
+package.json依赖:
+├── cheerio      # HTML解析核心库
+├── axios        # HTTP请求库  
+├── crypto-js    # 加密功能
+├── deasync      # 同步操作支持
+└── commander    # CLI命令解析
+
+tests/目录备用依赖:
 ├── drpy2.js          # 核心框架（35KB，已优化）
-├── cheerio.min.js    # HTML解析（284KB）
-├── crypto-js.js      # 加密库（127KB）
+├── cheerio.min.js    # HTML解析（备用，284KB）
+├── crypto-js.js      # 加密库（备用，127KB）
 ├── jsencrypt.js      # RSA加密（47KB）
 ├── 模板.js           # drpy2模板（8KB）
 └── gbk.js            # GBK编码（25KB）
@@ -375,6 +405,27 @@ const decrypted = aesX('ECB/Pkcs7', false, encrypted, key);
 
 // RSA加密（需要公钥）
 const rsaEncrypted = rsaX('RSA', true, 'data', publicKey);
+```
+
+### HTML解析功能
+
+```javascript
+import { pd, pdfh, pdfa, pdfl } from './lib/parser.js';
+
+const html = '<div><a href="/movie/123">电影标题</a><img src="cover.jpg"></div>';
+
+// pd - 解析DOM获取URL（支持URL拼接）
+const url = pd(html, 'a&&href', 'https://example.com'); // https://example.com/movie/123
+
+// pdfh - 解析DOM获取第一个匹配项的文本
+const title = pdfh(html, 'a&&Text'); // 电影标题
+
+// pdfa - 解析DOM获取数组
+const links = pdfa(html, 'a'); // ['<a href="/movie/123">电影标题</a>']
+
+// pdfl - 解析DOM获取列表（文本$链接格式）
+const list = pdfl(html, 'div', 'a&&Text', 'a&&href', 'https://example.com');
+// ['电影标题$https://example.com/movie/123']
 ```
 
 ### 工具函数
